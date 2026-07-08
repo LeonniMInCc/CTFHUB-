@@ -179,7 +179,7 @@ ctfhub{3b5800e230edfd2d817c54e9}
 
 这题不是直接绕过 `disable_functions` 执行命令，而是利用 `LD_PRELOAD` 让 PHP 间接启动的外部程序加载恶意共享库。共享库加载时自动执行构造函数，构造函数中执行 `/readflag` 并把结果写入 `/tmp/result.txt`，最后再通过 PHP 读取该文件。
 
-## 原理补充：小白问答
+## 原理补充
 
 ### `@eval($_REQUEST['ant']);` 为什么是入口
 
