@@ -290,7 +290,10 @@ print(decrypted)
 ```python
 """
 勒索病毒逆向 —— RC4 解密脚本
-使用方法: python solve.py
+
+使用方法:
+    1. 把题目提供的 enflag.txt 放到与本脚本相同的目录下
+    2. python solve.py
 """
 
 def rc4(key: bytes, data: bytes) -> bytes:
@@ -331,7 +334,8 @@ print(f"还原出的密钥: {key.decode()}")
 # 输出: [Warnning]Access_Unauthorized
 
 # ===== 第二步：解密 =====
-encrypted = open(r'E:\edge download\final\enflag.txt', 'rb').read()
+# enflag.txt 需与本脚本放在同一目录下（题目附件中的密文文件）
+encrypted = open('enflag.txt', 'rb').read()
 decrypted = rc4(key, encrypted)
 
 print(f"解密结果: {decrypted.decode()}")
